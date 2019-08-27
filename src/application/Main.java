@@ -1,11 +1,15 @@
 package application;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
-
+	
+	static int DIA_X = 566;
+	
 	public static void main(String[] args) {
 		char op = 0;
 		long value = 0;
@@ -17,7 +21,7 @@ public class Main {
 		// System.out.println(formatter.format(date));
 		// Scanner sc = new Scanner(System.in);
 		// sc.hasNextLong();
-		int DIA_X = 566;
+		
 		value = 1440 * DIA_X;
 		ChangeDate(cal, op, value);
 
@@ -106,8 +110,16 @@ public class Main {
 
 		}
 		if (mesNovoAno != 0)
-			ano++;
+			ano = ano + mesNovoAno;
 
+		Calendar c2 = Calendar.getInstance();
+		Date date = cal.getTime();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+		
+		c2.add(Calendar.DAY_OF_MONTH, DIA_X);
+	
+		System.out.println(sdf.format(c2.getTime()));
+		
 		System.out.println(dia);
 		System.out.println(mes);
 		System.out.println(ano);
