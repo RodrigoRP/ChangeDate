@@ -22,7 +22,7 @@ public class Main {
 		// Scanner sc = new Scanner(System.in);
 		// sc.hasNextLong();
 		
-		value = 1440 * DIA_X;
+		value = 8888 * DIA_X;
 		ChangeDate(cal, op, value);
 
 	}
@@ -104,7 +104,7 @@ public class Main {
 			if (mes < 12) {
 				mes++;
 			} else {
-				mes = mesNovoAno + 1;
+				mes = 1;
 				mesNovoAno++;
 			}
 
@@ -113,18 +113,18 @@ public class Main {
 			ano = ano + mesNovoAno;
 
 		Calendar c2 = Calendar.getInstance();
-		Date date = cal.getTime();
+		//Date date = cal.getTime();
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		
 		c2.add(Calendar.DAY_OF_MONTH, DIA_X);
 	
 		System.out.println(sdf.format(c2.getTime()));
 		
-		System.out.println(dia);
-		System.out.println(mes);
-		System.out.println(ano);
-		System.out.println(hora);
-		System.out.println(minuto);
+		System.out.print(dia);
+		System.out.print("/"+mes);
+		System.out.print("/"+ano);
+		System.out.print(" "+hora);
+		System.out.print(":"+minuto);
 
 	}
 
